@@ -21,7 +21,7 @@ public class SplashActivity extends Activity{
 		protected Void doInBackground(Void... params) {
 			// TODO Auto-generated method stub
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(3);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">my_contact_android_app</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">My Contacts</string>
+    <string name="add_contact">Add New Contact</string>
+    <string name="name">Enter Name</string>
+    <string name="phone_number">Enter Phone Number</string>
+    <string name="mail">Enter mail Id</string>
+    <string name="relation">Enter Relation</string>
+    <string name="clear">Clear</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
 
 </resources>

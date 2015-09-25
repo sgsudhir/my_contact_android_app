@@ -2,11 +2,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}"
+    android:background="@drawable/main_activity_bg" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+    
+   <ViewFlipper android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/vf"
+       android:layout_centerInParent="true">
+       
+       <Button android:id="@+id/addContact"
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:text="@string/add_contact"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            android:gravity="center"
+            android:background="@drawable/selector"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+       
+       <LinearLayout android:orientation="vertical"
+           android:layout_width="fill_parent"
+           android:layout_height="fill_parent"
+           android:weightSum="100">
+           
+           <EditText android:id="@+id/name"
+               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="20"
+               android:background="@drawable/selector_text_view"
+               android:hint="@string/name"
+               android:layout_gravity="center"
+               android:typeface="serif"
+               android:padding="10dp"
+               android:paddingLeft="20dp"
+               android:layout_margin="50dp"
+               android:singleLine="true"
+               android:inputType="textNoSuggestions" />
+           
+           <EditText android:id="@+id/phone"
+               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="20"
+               android:background="@drawable/selector_text_view"
+               android:hint="@string/phone_number"
+               android:layout_gravity="center"
+               android:typeface="serif"
+               android:padding="10dp"
+               android:paddingLeft="20dp"
+               android:layout_margin="50dp"
+               android:singleLine="true"
+               android:inputType="phone"
+               android:shadowColor="#FF0000" />
+           
+           <EditText android:id="@+id/mail"
+               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="20"
+               android:background="@drawable/selector_text_view"
+               android:hint="@string/mail"
+               android:layout_gravity="center"
+               android:typeface="serif"
+               android:padding="10dp"
+               android:paddingLeft="20dp"
+               android:layout_margin="50dp"
+               android:singleLine="true"
+               android:inputType="textEmailAddress"
+               android:shadowColor="#FF0000" />
+           
+           <EditText android:id="@+id/relation"
+               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="20"
+               android:background="@drawable/selector_text_view"
+               android:hint="@string/relation"
+               android:layout_gravity="center"
+               android:typeface="serif"
+               android:padding="10dp"
+               android:paddingLeft="20dp"
+               android:layout_margin="50dp"
+               android:singleLine="true"
+               android:inputType="textNoSuggestions"
+               android:shadowColor="#FF0000" />
+           
+           <LinearLayout android:orientation="horizontal"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:weightSum="30"
+               android:layout_weight="20">
+               
+               <Button android:id="@+id/back"
+                   android:layout_width="0dp"
+                   android:layout_height="50dp"
+                   android:layout_weight="10"
+                   android:text="@string/back"
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                   android:layout_margin="10dp"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:background="@drawable/action_button_selector"/>
+               
+               <Button android:id="@+id/clear"
+                   android:layout_width="0dp"
+                   android:layout_height="50dp"
+                   android:layout_weight="10"
+                   android:text="@string/clear"
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                   android:layout_margin="10dp"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:background="@drawable/action_button_selector"/>
+               
+               <Button android:id="@+id/save"
+                   android:layout_width="0dp"
+                   android:layout_height="50dp"
+                   android:layout_weight="10"
+                   android:text="@string/save"
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                   android:layout_margin="10dp"
+                   android:layout_gravity="center_vertical|center_horizontal"
+                   android:background="@drawable/action_button_selector"/>
+               
+           </LinearLayout>
+           
+       </LinearLayout>
+  
+       
+   </ViewFlipper>
+    
 </RelativeLayout>
