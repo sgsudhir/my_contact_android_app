@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="20"
+    android:background="#C299FF"
+    android:padding="30dp"
+    android:layout_margin="30dp" >
+    
+    <TextView android:id="@+id/row_name"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:padding="10dp"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:text="Hello Android"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        android:textColor="#2C3300"/>
+    
+    <LinearLayout android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_weight="6"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp">
+        
+        <TextView android:id="@+id/row_phone"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="6"
+            android:text="Phone"
+            android:textColor="#FF7247"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:paddingLeft="10dp"
+            android:layout_margin="10dp"
+            android:gravity="left|center_vertical"
+            android:layout_gravity="left" />
+        
+        <TextView android:id="@+id/row_relationship"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:layout_gravity="right"
+            android:gravity="right|center_vertical"
+            android:text="Relation"
+            android:textColor="#689400"
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:typeface="sans"
+            android:layout_marginTop="10dp" />
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/row_mail"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:text="Mail-Id"
+        android:layout_gravity="left|top"
+        android:gravity="left"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
+        android:textSize="20sp"
+        android:textColor="#CC9600"
+        android:textStyle="italic"
+        android:typeface="sans"/>
+
+</LinearLayout>

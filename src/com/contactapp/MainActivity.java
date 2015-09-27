@@ -1,16 +1,28 @@
 package com.contactapp;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import com.network.HTTPServiceHandler;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity implements OnClickListener{
@@ -82,6 +94,29 @@ public class MainActivity extends Activity implements OnClickListener{
 		
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		MenuInflater inflater=getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()){
+		case R.id.show_contacts:
+			Intent i=new Intent(MainActivity.this, ContactList.class);
+			startActivity(i);
+			break;
+
+		default:
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
 	private class Store extends AsyncTask<Void, Void, Void>{
 		private boolean status=false;
 		ProgressDialog dialog;
@@ -90,14 +125,19 @@ public class MainActivity extends Activity implements OnClickListener{
 			dialog.setMessage("Please Wait While Storing Data");
 		}
 		@Override
-		protected Void doInBackground(Void... params) {
+		protected Void doInBackground(Void... params1) {
 			// TODO Auto-generated method stub
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+		    List<NameValuePair> params = new ArrayList<NameValuePair>(2);
+		    params.add(new BasicNameValuePair("name", _name));
+		    params.add(new BasicNameValuePair("phone_number", _phone));
+		    params.add(new BasicNameValuePair("email", _mail));
+		    params.add(new BasicNameValuePair("relationship", _rel));
+		    
+		    HTTPServiceHandler serviceClient = new HTTPServiceHandler();
+		    String json = serviceClient.makeServiceCall("https://quiet-waters-9559.herokuapp.com/api/v1/contacts",HTTPServiceHandler.POST, params);
+			Log.e("Response", json);
+			
 			return null;
 		}
 		
