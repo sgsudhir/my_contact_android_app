@@ -6,8 +6,6 @@ import java.util.List;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
-import com.network.HTTPServiceHandler;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -24,6 +22,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ViewFlipper;
+
+import com.network.HTTPServiceHandler;
 
 public class MainActivity extends Activity implements OnClickListener{
 	ViewFlipper vf;
@@ -133,6 +133,8 @@ public class MainActivity extends Activity implements OnClickListener{
 		    params.add(new BasicNameValuePair("phone_number", _phone));
 		    params.add(new BasicNameValuePair("email", _mail));
 		    params.add(new BasicNameValuePair("relationship", _rel));
+		    
+
 		    
 		    HTTPServiceHandler serviceClient = new HTTPServiceHandler();
 		    String json = serviceClient.makeServiceCall("https://quiet-waters-9559.herokuapp.com/api/v1/contacts",HTTPServiceHandler.POST, params);
